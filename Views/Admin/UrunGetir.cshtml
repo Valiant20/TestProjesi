@@ -1,0 +1,30 @@
+﻿@model TestProjesi.Models.Urunler
+@{
+    ViewBag.Title = "BlogGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Blog Güncelleme</h2>
+<br />
+@using (Html.BeginForm("UrunGuncelle", "Admin", FormMethod.Post))
+{
+    @Html.LabelFor(x => x.UrunID)
+    @Html.TextBoxFor(x => x.UrunID, new { @class = "form-control", @readonly = "readonly" })
+    <br />
+    @Html.LabelFor(x => x.UrunBaslik)
+    @Html.TextBoxFor(x => x.UrunBaslik, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.UrunDurum)
+    @Html.TextBoxFor(x => x.UrunDurum, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.UrunResimURL)
+    @Html.TextBoxFor(x => x.UrunResimURL, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.UrunAciklama)
+    @Html.TextAreaFor(x => x.UrunAciklama, 15, 1, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-success">Blogu Güncelle</button>
+
+}
+
+

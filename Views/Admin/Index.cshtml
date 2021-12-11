@@ -1,0 +1,30 @@
+﻿@using TestProjesi.Models
+@model List<Urunler>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Urun Listesi</h2>
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Başlık</th>
+        <th>Detaylar</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.UrunID</td>
+            <td>@x.UrunBaslik</td>
+            <td><a href="/Urunler/UrunDetay/@x.UrunID/" target="_blank" class="btn btn-default">Detaylar</a></td>
+            <td><a href="/Admin/UrunSil/@x.UrunID" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Admin/UrunGetir/@x.UrunID" class="btn btn-warning">Güncelle</a></td>
+        </tr>
+    }
+</table>
+
+<td><a href="/Admin/YeniUrun/" class="btn btn-primary">Yeni Ürün</a></td>

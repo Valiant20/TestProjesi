@@ -1,0 +1,20 @@
+﻿@model TestProjesi.Models.Urunler
+@{
+    ViewBag.Title = "YeniUrun";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>YeniUrun</h2>
+<br />
+<form class="form-group" method="post">
+    @Html.LabelFor(x => x.UrunBaslik)
+    @Html.TextBoxFor(x => x.UrunBaslik, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.UrunResimURL)
+    @Html.TextBoxFor(x => x.UrunResimURL, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.UrunAciklama)
+    @Html.TextAreaFor(x => x.UrunAciklama, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-primary">Ürünü Kaydet</button>
+</form>
