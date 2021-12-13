@@ -3,14 +3,22 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using TestProjesi.Models;
 
 namespace TestProjesi.Controllers
 {
     public class HomeController : Controller
     {
+        Context c = new Context();
         public ActionResult Index()
         {
             return View();
+        }
+
+        public PartialViewResult Partial1()
+        {
+            var deger = c.Urunlers.OrderByDescending(x=>x.UrunID).Take(3).ToList();
+            return PartialView(deger);
         }
 
         public ActionResult About()

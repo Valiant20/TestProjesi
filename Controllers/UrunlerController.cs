@@ -19,6 +19,7 @@ namespace TestProjesi.Controllers
             return View(uy);
         }
 
+        [AllowAnonymous]
         public ActionResult UrunDetay(int id)
         {
             uy.Deger1 = c.Urunlers.Where(x => x.UrunID == id).ToList();
@@ -39,6 +40,12 @@ namespace TestProjesi.Controllers
             c.Yorumlars.Add(y);
             c.SaveChanges();
             return PartialView();
+        }
+
+        public PartialViewResult Partial1()
+        {
+            var deger = c.Urunlers.OrderByDescending(x => x.UrunID).ToList();
+            return PartialView(deger);
         }
     }
 }
