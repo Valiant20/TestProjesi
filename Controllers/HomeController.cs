@@ -17,7 +17,7 @@ namespace TestProjesi.Controllers
 
         public PartialViewResult Partial1()
         {
-            var deger = c.Urunlers.OrderByDescending(x=>x.UrunID).Take(3).ToList();
+            var deger = c.Urunlers.OrderByDescending(x=>x.UrunID).Take(4).ToList();
             return PartialView(deger);
         }
 
