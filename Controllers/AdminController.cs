@@ -48,11 +48,17 @@ namespace TestProjesi.Controllers
         {
             var ur = c.Urunlers.Find(p.UrunID);
             ur.UrunAciklama = p.UrunAciklama;
-            ur.UrunBaslik = p.UrunAciklama;
+            ur.UrunBaslik = p.UrunBaslik;
             ur.UrunResimURL = p.UrunResimURL;
             ur.UrunKategoriID = p.UrunKategoriID;
             c.SaveChanges();
             return RedirectToAction("Index");
+        }
+
+        public ActionResult HakkimizdaDüzenle()
+        {
+            var degerler = c.Hakkimizdas.ToList();
+            return View(degerler);
         }
 
 

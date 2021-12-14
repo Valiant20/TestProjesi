@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewBag.Title = "HakkimizdaDüzenle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>HakkimizdaDüzenle</h2>
+
+@using TestProjesi.Models
+@model List<Hakkimizda>
+@{
+    ViewBag.Title = "YorumListesi";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>YorumListesi</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Açıklama</th>
+        <th>FotoURL</th>
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.ID</td>
+            <td>@x.Aciklama</td>
+            <td>@x.FotoUrl</td>
+        </tr>
+    }
+</table>
